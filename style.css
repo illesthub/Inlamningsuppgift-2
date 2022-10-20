@@ -6,6 +6,7 @@
     --color-darkblue: #222529;
     --color-darkgrey: #23262A;
     --color-grey: #BBBBBB;
+    --color-grey-2: #616365;
 
     --font-poppins: 'Poppins', 'sans-serif';
 
@@ -46,6 +47,7 @@
 .general-button:hover {
     background-color: var(--color-darkblue);
     color: white;
+    font-weight: 700;
 }
 
     .general-button .corners {
@@ -403,7 +405,8 @@
         display: flex;
         padding-top: 3rem;
         padding-left: 12rem;
-        gap: 5.5rem;
+        padding-bottom: 6rem;
+        gap: 5rem;
     }
 
     .special-offer .double-offer {
@@ -615,3 +618,34 @@
         grid-column: 3 / -1;
         grid-row: 2 / -1;
     }
+
+/* customer-concerns */
+
+    .customer-service .container-xl {
+        border-top: 2px solid var(--color-grey);        
+    }
+
+    .customer-service .customer-concerns {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+    }
+
+        .customer-service .customer-concerns h2 {
+            font-family: var(--font-poppins);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .customer-service .customer-concerns p {
+            font-family: var(--font-poppins);
+            margin: 0;
+        }
+
+        .customer-service .customer-concerns span {
+            font-family: var(--font-poppins);
+            margin: 0;
+        }
