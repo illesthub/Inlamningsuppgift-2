@@ -627,7 +627,7 @@
 
     .customer-service .customer-concerns {
         padding-top: 5rem;
-        padding-bottom: 5rem;
+        padding-bottom: 4rem;
         display: flex;
         justify-content: space-around;
         text-align: center;
@@ -636,7 +636,7 @@
         .customer-service .customer-concerns h2 {
             font-family: var(--font-poppins);
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
 
@@ -648,4 +648,39 @@
         .customer-service .customer-concerns span {
             font-family: var(--font-poppins);
             margin: 0;
+        }
+
+/* media-rights */
+.media-rights {
+    border-top: 2px solid var(--color-grey);
+    border-bottom: 2px solid var(--color-grey);
+    background-color: #F8F8F8;
+    text-align: center;
+}
+
+    .media-rights .social-media {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+        .media-rights .social-media a {
+            margin: 0.6rem;
+        }
+
+        .media-rights .social-media i {
+            font-size: 1.2rem;
+        }
+
+    .media-rights .copyrights {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 2rem;
+
+    }
+
+        .media-rights .copyrights p {
+            margin: 0 0 0 5px;
+            font-family: var(--font-poppins);
+            color: var(--color-grey-2);
         }
