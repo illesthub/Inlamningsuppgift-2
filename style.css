@@ -5,6 +5,7 @@
     --color-theme-light: #F5F5F5;
     --color-darkblue: #222529;
     --color-darkgrey: #23262A;
+    --color-grey: #BBBBBB;
 
     --font-poppins: 'Poppins', 'sans-serif';
 
@@ -389,3 +390,228 @@
                     background-color: var(--color-theme);
                     color: white;
                 }
+
+/* special-offer */
+    .special-offer .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        padding-left: 7.1rem;
+    }
+
+    .special-offer .container-fluid-reverse {
+        display: flex;
+        padding-top: 3rem;
+        padding-left: 12rem;
+        gap: 5.5rem;
+    }
+
+    .special-offer .double-offer {
+        background-color: var(--color-grey);
+        width: 825px;
+        height: 670px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;       
+    }
+
+        .special-offer .double-offer h2 {
+            color: white;
+            font-family: var(--font-poppins);
+            font-weight: bold;
+            font-size: 45px;
+            margin-bottom: 2rem;
+        }
+
+        .special-offer .double-offer button {
+            background-color: white;
+            color: var(--color-darkblue);
+        }
+
+        .special-offer .double-offer button:hover {
+                background-color: var(--color-theme);
+                color: white;
+            }
+
+    .special-offer .container-fluid .grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(3, minmax(205px, 205px));
+        grid-template-rows: repeat(2, minmax(320px, 320px));
+        width: 825px;
+    }
+
+    .special-offer .container-fluid-reverse .grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(3, minmax(205px, 205px));
+        grid-template-rows: repeat(2, minmax(320px, 320px));
+        width: 700px;
+    }
+
+
+
+    .special-offer .product-box {
+        position: relative;
+        background-color: var(--color-theme-light);
+        text-align: center;
+
+    }
+
+        .special-offer .product-box:hover {
+            background-color: var(--color-theme-alternative);
+        }
+
+        .special-offer .product-box .quick-view {
+            position: absolute;
+            width: 100%;
+            height: 255px;
+            padding-top: 15rem;
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+        }
+
+            .special-offer .product-box:hover .quick-view {
+                padding: 0;
+            }
+
+
+            .special-offer .product-box .quick-view .icons {
+                position: absolute;
+                right: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+                .special-offer .product-box .quick-view .icons li {
+                    list-style: none;
+                    background-color: white;
+                    color: var(--color-darkgrey);
+                    border-radius: 50%;
+                    margin: 8px;
+                    padding: 0.55rem 0.65rem;                        
+                }
+
+                    .special-offer .product-box .quick-view .icons li:hover {
+                        background-color: black;
+                        color: white;
+                    }
+
+                    .special-offer .product-box .quick-view .icons li:hover a {
+                        background-color: white;
+                        color: black;
+                    }
+
+                        .special-offer .product-box .quick-view .icons li:hover a {
+                            background-color: black;
+                            color: white;
+                        }
+
+            .special-offer .product-box .quick-view button {
+                position: absolute;
+                bottom: -50px;
+                left: 0;
+                width: 100%;
+                height: 54px;
+                font-weight: 400;
+                overflow: hidden;
+            }
+
+                .special-offer .product-box:hover .quick-view button {
+                    position: absolute;
+                    bottom: 40px;
+                    left: 0;
+                }
+
+
+        .special-offer .product-box .box-menu {
+            position: absolute;
+            background-color: white;
+            bottom: 0;
+            width: 100%;
+            height: 105px;
+        }
+
+
+            .special-offer .product-box .box-menu p {
+                font-family: var(--font-poppins);
+                font-weight: var(--font-weight-medium);
+                font-size: 0.9rem;
+                color: grey;
+                padding-top: 0.2rem;
+                padding-bottom: 0;
+                margin: 0;
+            }
+
+            .special-offer .product-box .box-menu h1 {
+                font-family: var(--font-poppins);
+                font-weight: 600;
+                font-size: 1.2rem;
+                padding-top: 0.3rem;
+                padding-bottom: 0.3rem;
+                margin: 0;
+            }
+
+            .special-offer .product-box .box-menu span {
+                color: var(--color-theme);
+                padding-top: 0;
+                margin-top: 0;
+            }
+
+            .special-offer .product-box .box-menu .current-price {
+                font-family: var(--font-poppins);
+                font-weight: var(--font-weight-semibold);
+                font-size: 1.3rem;
+            }
+
+
+    #product-box-9 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #product-box-10 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    #product-box-11 {
+        grid-column: 3 / -1;
+        grid-row: 1 / 2;
+    }
+    #product-box-12 {
+        grid-column: 1 / 2;
+        grid-row: 2 / -1;
+    }
+    #product-box-13 {
+        grid-column: 2 / 3;
+        grid-row: 2 / -1;
+    }
+    #product-box-14 {
+        grid-column: 3 / -1;
+        grid-row: 2 / -1;
+    }
+    #product-box-15 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #product-box-16 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    #product-box-17 {
+        grid-column: 3 / -1;
+        grid-row: 1 / 2;
+    }
+    #product-box-18 {
+        grid-column: 1 / 2;
+        grid-row: 2 / -1;
+    }
+    #product-box-19 {
+        grid-column: 2 / 3;
+        grid-row: 2 / -1;
+    }
+    #product-box-20 {
+        grid-column: 3 / -1;
+        grid-row: 2 / -1;
+    }
