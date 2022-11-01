@@ -7,9 +7,9 @@ import MenuIcon from '../components/MenuIcon';
 const MainMenuSection = () => {
   return (
     <nav class="mainmenu container">
-        <div className='logo'>
-            <img src={Logo} alt=''/>
-        </div>
+        <NavLink to="/" end>
+            <img src={Logo} alt='Fixxo.'/>
+        </NavLink>
         <div class="menu-links">
             <NavLink className="menu-link" to="/" end>Home</NavLink>
             <NavLink className="menu-link" to="/categories" end>Categories</NavLink>
@@ -18,9 +18,9 @@ const MainMenuSection = () => {
         </div>
         <div class="menu-icons">
             <MenuIcon link="/search" icon="fa-regular fa-magnifying-glass" />
-            <MenuIcon link="/compare" icon="fa-regular fa-arrow-right-arrow-left" />
-            <MenuIcon link="/wishlist" icon="fa-regular fa-heart" />
-            <MenuIcon link="/shoppingcart" icon="fa-regular fa-bag-shopping" />
+            <MenuIcon link="/compare" icon="fa-regular fa-code-compare" />
+            <MenuIcon quantity="3" link="/wishlist" icon="fa-regular fa-heart" />
+            <MenuIcon quantity="4" link="/shoppingcart" icon="fa-regular fa-bag-shopping" />
         </div>
     </nav>
   )
