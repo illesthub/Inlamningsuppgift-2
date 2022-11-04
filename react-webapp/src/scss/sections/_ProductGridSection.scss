@@ -1,18 +1,30 @@
 .product-grid {
     margin-bottom: 60px;
 
+    h1 {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
     .container {
+        display: flex;
         max-width: 1110px;
     }
 
     .card {
         border: none;
+        width: 255px;
+        margin-left: auto;
+        margin-right: auto;
 
         img,
         .card-img {
             height: 210px;
-            width: 255px;
+            width: 100%;
             background-color: $linear-gradient-light;
+            object-fit: cover;
             position: relative;
 
             .card-menu {
@@ -81,8 +93,6 @@
             }
         }
 
-
-
         &:hover {
 
             .card-menu {
@@ -93,7 +103,13 @@
                 display: flex;
             }
         }
+    }
+}
 
-
+@media (min-width: 1200px) {
+    .product-grid {
+        .container {
+            max-width: 1110px;
+        }
     }
 }
