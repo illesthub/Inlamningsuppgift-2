@@ -2,9 +2,33 @@
 
     .container-fluid {
         display: flex;
+        justify-content: space-between;
+
+        .img {
+            height: 850px;
+        }
     }
 
         .offer {
             text-align: center;
+            padding-top: 240px;
+
+            h1 {
+               
+                font-size: 65px;
+                font-weight: 700;
+            }
         }
+
+            h2 {
+                
+                font-size: 65px;
+                font-weight: 700;
+                padding-bottom: 30px;
+            }
+
+            p {
+                font-size: 20px;
+                padding-bottom: 40px;
+            }
 }

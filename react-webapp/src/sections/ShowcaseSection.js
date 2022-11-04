@@ -6,9 +6,9 @@ import RightImage from "../assets/images/background-right-image.svg"
 const ShowcaseSection = () => {
   return (
     <section className='showcase'>
-        <div className='container-fluid'>
-            <img src={LeftImage} alt='left image'/>
-            <div className='offer'>
+        <div className='container-fluid border'>
+            <img src={LeftImage} alt='left image' className='border'/>
+            <div className='offer border'>
                 <h1>SALE UP</h1>
                 <h2>TO 50% OFF</h2>
                 <p>Online shopping free home delivery over $100</p>
@@ -18,7 +18,7 @@ const ShowcaseSection = () => {
                     SHOP NOW
                 </NavLink>
             </div>
-            <img src={RightImage} alt='right image'/>
+            <img src={RightImage} alt='right image' className='border'/>
         </div>
     </section>
   )
