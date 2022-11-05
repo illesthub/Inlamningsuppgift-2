@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import LeftImage from "../assets/images/background-left-image.svg"
-import RightImage from "../assets/images/background-right-image.svg"
+import LeftImage from "../assets/images/left-image.png"
+import RightImage from "../assets/images/right-image.png"
 
 const ShowcaseSection = () => {
   return (
     <section className='showcase'>
-        <div className='container-fluid border'>
-            <img src={LeftImage} alt='left image' className='border'/>
-            <div className='offer border'>
+        <div className='container-fluid'>
+            <img src={LeftImage} alt='left image' />
+            <div className='offer'>
                 <h1>SALE UP</h1>
                 <h2>TO 50% OFF</h2>
                 <p>Online shopping free home delivery over $100</p>
@@ -18,7 +18,7 @@ const ShowcaseSection = () => {
                     SHOP NOW
                 </NavLink>
             </div>
-            <img src={RightImage} alt='right image' className='border'/>
+            <img src={RightImage} alt='right image' />
         </div>
     </section>
   )

@@ -1,8 +1,11 @@
 .showcase {
+    background: rgb(230,230,230);
+    background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 100%);
 
     .container-fluid {
         display: flex;
         justify-content: space-between;
+        padding-top: 1rem;
 
         .img {
             height: 850px;
