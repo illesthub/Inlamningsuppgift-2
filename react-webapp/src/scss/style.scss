@@ -7,9 +7,14 @@
 @import "./cores/base";
 @import "./cores/buttons";
 
+//components
+@import "./components/ProductCard";
+
 // sections
 @import "./sections/MainMenuSections";
 @import "./sections/ShowcaseSection";
 @import "./sections/ProductGridSection";
 @import "./sections/PamelaSection";
+@import "./sections/DealSection";
+@import "./sections/CustomerSection";
 @import "./sections/FooterSection";
