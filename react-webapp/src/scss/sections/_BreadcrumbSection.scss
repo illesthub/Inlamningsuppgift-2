@@ -1,0 +1,36 @@
+.breadcrumb {
+    height: 3rem;
+    margin-left: 27rem;
+    margin-top: 3rem;
+    margin-bottom: 0;
+
+    .container {
+        display: flex;
+
+        .home {
+            color: $color-dark;
+            margin-bottom: 0;
+            padding-bottom: 0;
+    
+            &:hover {
+                color: $color-theme;
+                text-decoration: none;
+            }
+        }
+    
+        p {
+            margin: 0 5px;
+        }
+    
+        .contacts {
+    
+            &:hover {
+                text-decoration: none;
+            }
+    
+        }
+
+    }
+
+
+}

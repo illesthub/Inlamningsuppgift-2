@@ -32,6 +32,9 @@ const Home = () => {
     { id: 13, name: "Modern Black Blouse", category: "Fashion", price: "$35.00", rating: "5", img: "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?cs=srgb&dl=pexels-anastasiya-gepp-1462637.jpg&fm=jpg&_gl=1*npjfz3*_ga*MTI4MzY3MjYxMS4xNjY3NTE3MDc1*_ga_8JE65Q40S6*MTY2NzUxNzA3NS4xLjEuMTY2NzUxNzYxNC4wLjAuMA.." },
     { id: 14, name: "Modern Black Blouse", category: "Fashion", price: "$35.00", rating: "5", img: "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?cs=srgb&dl=pexels-anastasiya-gepp-1462637.jpg&fm=jpg&_gl=1*npjfz3*_ga*MTI4MzY3MjYxMS4xNjY3NTE3MDc1*_ga_8JE65Q40S6*MTY2NzUxNzA3NS4xLjEuMTY2NzUxNzYxNC4wLjAuMA.." },
   ])
+
+  window.top.document.title = 'Fixxo.'
+
   return (
     <>
       <MainMenuSection />

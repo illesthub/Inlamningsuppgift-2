@@ -1,19 +1,106 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import ContactsView from '../views/ContactsView'
+import React, { useState } from 'react'
+import { validate } from '../assets/images/scripts/validation'
 
 const ContactFormSection = () => {
+  let currentPage = "Contact Us"
+  window.top.document.title = `${currentPage} || Fixxo` 
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [comments, setComments] = useState('')
+  const [errors, setErrors] = useState({})
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleChange = (e) => {
+    const {id, value} = e.target
+
+    switch(id) {
+      case 'name':
+        setName(value)
+        break
+      case 'email':
+        setEmail(value)
+        break
+      case 'comments':
+        setComments(value)
+        break
+    }
+
+    setErrors({...errors, [id]: validate(e)})
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setErrors(validate(e, {name, email, comments}))
+  
+    if (errors.name === null && errors.email === null && errors.comments === null) {
+
+      let json = JSON.stringify({ name, email, comments})
+      console.log(json)
+
+      setName('')
+      setEmail('')
+      setComments('')
+      setErrors({})
+
+      fetch('https://win22-webapi.azurewebsites.net/api/contactform', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: json
+      })
+      .then(res => {
+        console.log(res.status)
+
+        if (res.status === 200) {
+          setSubmitted(true)
+        }
+        else {
+          setSubmitted(false)
+        }
+      })
+
+    } 
+    else {
+      setSubmitted(false)
+    }
+  }
+
+
+
   return (
-    <section className='contact-form'>
-        <div className='breadcrumb'>
-          <NavLink className="home" to="/" end>Home</NavLink>
-          <p>/</p>
-          <NavLink className="contacts" to={ContactsView} end>Contacts</NavLink>
-        </div>
-        <div className='map'>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37687.32778216318!2d15.176897095024389!3d59.2705750129479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465c14ce5262c35d%3A0x35322003293cc49e!2sEC%20Utbildning%20%C3%96rebro!5e0!3m2!1ssv!2sse!4v1667920645013!5m2!1ssv!2sse" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <form className='contact-us'></form>
+    <section className="contact-form mt-5">
+      <div className="container">
+        
+        {
+          submitted ? (
+          <div className="alert alert-success text-center mb-5" role="alert">
+            <h3>Thank you for your comments</h3> 
+            <p>We will contact you as soon as possible.</p>
+            </div>  ) : (<></>)
+        }
+        
+        
+        <h2>Come in Contact with Us</h2>
+        <form onSubmit={handleSubmit} noValidate>
+          <div>
+            <input id="name" className={(errors.name ? 'error': '')} value={name} onChange={handleChange} type="text" placeholder="Your Name" />
+            <div className="errorMessage">{errors.name}</div>
+          </div>
+          <div>
+            <input id="email" className={(errors.email ? 'error': '')} value={email} onChange={handleChange} type="email" placeholder="Your Mail" />
+            <div className="errorMessage">{errors.email}</div>
+          </div>
+          <div className="textarea">
+            <textarea id="comments" className={(errors.comments ? 'error': '')} style={(errors.comments ? {border: '1px solid #FF7373'}: {} )} value={comments} onChange={handleChange} placeholder="Comments"></textarea>
+            <div className="errorMessage">{errors.comments}</div>
+          </div>
+          <div className="formBtn">
+            <button type="submit" className="btn-theme">Post Comments</button>
+          </div>
+        </form>    
+      </div>
     </section>
   )
 }
