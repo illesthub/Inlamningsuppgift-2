@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { validate } from '../assets/images/scripts/validation'
+import { submitData, validate } from '../assets/images/scripts/validation'
 
 const ContactFormSection = () => {
   let currentPage = "Contact Us"
@@ -10,6 +10,7 @@ const ContactFormSection = () => {
   const [comments, setComments] = useState('')
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [failedSubmit, setFailedSubmit] = useState(false)
 
   const handleChange = (e) => {
     const {id, value} = e.target
@@ -29,8 +30,10 @@ const ContactFormSection = () => {
     setErrors({...errors, [id]: validate(e)})
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setFailedSubmit(false)
+    setSubmitted(false)
     setErrors(validate(e, {name, email, comments}))
   
     if (errors.name === null && errors.email === null && errors.comments === null) {
@@ -43,31 +46,18 @@ const ContactFormSection = () => {
       setComments('')
       setErrors({})
 
-      fetch('https://win22-webapi.azurewebsites.net/api/contactform', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: json
-      })
-      .then(res => {
-        console.log(res.status)
-
-        if (res.status === 200) {
-          setSubmitted(true)
-        }
-        else {
-          setSubmitted(false)
-        }
-      })
-
+      if(await submitData('https://win22-webapi.azurewebsites.net/api/contactform', 'POST', json, )) {
+        setSubmitted(true)
+        setFailedSubmit(false)
+      } else {
+        setSubmitted(false)
+        setFailedSubmit(true)
+      }
     } 
     else {
       setSubmitted(false)
     }
   }
-
-
 
   return (
     <section className="contact-form mt-5">
@@ -78,6 +68,14 @@ const ContactFormSection = () => {
           <div className="alert alert-success text-center mb-5" role="alert">
             <h3>Thank you for your comments</h3> 
             <p>We will contact you as soon as possible.</p>
+            </div>  ) : (<></>)
+        }
+
+{
+          failedSubmit ? (
+          <div className="alert alert-danger text-center mb-5" role="alert">
+            <h3>Something went wrong!</h3> 
+            <p>We could not submit your comment, please try again later.</p>
             </div>  ) : (<></>)
         }
         
