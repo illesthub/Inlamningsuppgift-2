@@ -8,7 +8,7 @@ const PamelaSection = () => {
     <section className='pamela-section'>
         <div className='container-fluid'>
             <div className='pamelas-picks'>
-              <img src={PamelasPicks} />
+              <img src={PamelasPicks} alt="Picture of Pamela" />
               <h1>Pamela Reif's <span>Top Picks</span></h1>
               <NavLink className='button btn-theme-dark'>                    
                     <span className='corner-left'></span>
@@ -17,7 +17,7 @@ const PamelaSection = () => {
               </NavLink>
             </div>
             <div className='lets-be-conscious'>
-              <img src={LetsBeConscious} />
+              <img src={LetsBeConscious} alt="Picture of model"/>
               <h1>Let's Be <span>Conscious</span></h1>
               <NavLink className='button btn-theme-light'>                    
                     <span className='corner-left'></span>

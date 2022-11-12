@@ -1,15 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import ContactsView from '../views/ContactsView'
 
-const Breadcrumb = () => {
+const Breadcrumb = ({currentPage}) => {
   return (
-    <section className='breadcrumb d-none'>
-        <div className='container'>
-          <NavLink className="home" to="/" end>Home</NavLink>
-          <p>></p>
-          <NavLink className="contacts" to={ContactsView} end>Contacts</NavLink>
-        </div>
+    <section className='breadcrumb'>
+      <div className='container'>             
+        <ul className='breadcrumb-list'>
+          <li>
+            <NavLink to="/" className="me-1">Home</NavLink>
+          </li>
+          <li>{currentPage}</li>
+        </ul>
+      </div>
     </section>
   )
 }

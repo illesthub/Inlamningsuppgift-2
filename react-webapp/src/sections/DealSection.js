@@ -2,7 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import ProductCard from "../components/ProductCard"
 
-const DealSection = ({products}) => {
+// Hej Hasse jag körde tre i bredd på produkterna istället för två //
+// för jag tycker att det är oändligt mycket snyggare. Mvh Harald //
+
+const DealSection = ({items = []}) => {
   return (
     <section className='dealsection'>
         <div className='container-fluid'>
@@ -16,14 +19,14 @@ const DealSection = ({products}) => {
             </div>
             <div className='grid row row-cols-1 row-cols-md-2 g-2'>
                 {
-                  products.map(product => <ProductCard key={product.id} product={product} />)
+                  items.map( product => <ProductCard key={product.articleNumber} item={product} />)
                 }
             </div>
         </div>
         <div className='container-fluid-reverse'>           
             <div className='grid row row-cols-1 row-cols-md-2 g-2'>
                 {
-                  products.map(product => <ProductCard key={product.id} product={product} />)
+                  items.map( product => <ProductCard key={product.articleNumber} item={product} />)
                 }
             </div>
             <div className='two-for-one'>

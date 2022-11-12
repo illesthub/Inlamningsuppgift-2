@@ -6,8 +6,9 @@ import MenuIcon from '../components/MenuIcon';
 
 const MainMenuSection = () => {
   return (
-    <nav className="mainmenu container">
-        <NavLink to="/" end>
+    <nav className="mainmenu">
+      <div className='container-fluid'>
+      <NavLink to="/" end>
             <img src={Logo} alt='Fixxo.'/>
         </NavLink>
         <div className="menu-links">
@@ -22,6 +23,7 @@ const MainMenuSection = () => {
             <MenuIcon quantity="3" link="/wishlist" icon="fa-regular fa-heart" />
             <MenuIcon quantity="4" link="/shoppingcart" icon="fa-regular fa-bag-shopping" />
         </div>
+      </div>
     </nav>
   )
 }

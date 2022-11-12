@@ -11,7 +11,7 @@ const ContactsView = () => {
   return (
     <>
       <MainMenuSection />
-      <BreadcrumbSection />
+      <BreadcrumbSection currentPage="Contacts"/>
       <MapSection />
       <ContactFormSection />
       <FooterSection />
